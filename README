@@ -8,7 +8,9 @@ function as:
   er_main(int argc, char *argv[]).
 
 No headers are provided, c/c++ applications need to resolve the er_main symbol
-and linkage time by using extern, e.g.: extern er_main(int argc, char *argv[]);
+and linkage time by using extern, e.g.: 
+
+  extern er_main(int argc, char *argv[]);
 
 Refer to the original version in https://www.eso.org/sci/software/cpl/download.html
 
@@ -22,6 +24,11 @@ to re-generate those files, e.g.:
 
   autoreconf --install --force
 
+To clean dist, maintenance, etc:
+
+  MAINTAINER_MODE=1 make maintainer-clean
+  make distclean clean
+
 To build the binaries, more about on non-trivial automake options, refer to the
 original README.
 
@@ -30,7 +37,14 @@ original README.
   	--with-cpl=<where-cpl-is-installed> \
   	--with-cfitsio=<where-cfitsio-is-installed>
 
-To clean dist, maintenance, etc:
+As needed:
 
-  MAINTAINER_MODE=1 make maintainer-clean
-  make distclean clean
+    make && make install
+
+Files installed:
+
+  lib/libesorex.so.0.0.0
+  lib/libesorex.so.0
+  lib/libesorex.so
+  lib/libesorex.la
+  lib/libesorex.a
