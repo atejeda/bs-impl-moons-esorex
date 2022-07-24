@@ -14,6 +14,7 @@ AC_CANONICAL_HOST
 AC_CANONICAL_TARGET
 
 AM_INIT_AUTOMAKE
+AC_PROG_LIBTOOL
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES])
 
 AM_MAINTAINER_MODE
@@ -87,9 +88,5 @@ LT_SYS_MODULE_EXT
 
 
 AC_CONFIG_FILES(Makefile
-                Doxyfile
-                src/Makefile
-                src/tests/Makefile
-                etc/Makefile
-                etc/esorex.rc)
+                src/Makefile)
 AC_OUTPUT

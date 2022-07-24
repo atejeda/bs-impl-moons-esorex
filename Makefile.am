@@ -25,7 +25,7 @@ ACLOCAL_AMFLAGS = -I m4
 DISTCLEANFILES = *~
 
 
-SUBDIRS = libltdl src etc
+SUBDIRS = libltdl src
 
 DOXYGEN_SUBDIRS =
 
