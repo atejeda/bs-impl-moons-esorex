@@ -816,7 +816,7 @@ _esorex_memory_mode_get(int argc, char *argv[],
 }
 
 
-int main(int argc, char *argv[])
+int er_main(int argc, char *argv[])
 {
     const char *fn = "EsoRex";
 

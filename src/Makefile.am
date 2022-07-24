@@ -22,7 +22,7 @@ AUTOMAKE_OPTIONS = 1.8 foreign
 
 DISTCLEANFILE = *~
 
-SUBDIRS = . tests
+SUBDIRS = .
 
 
 if MAINTAINER_MODE
@@ -50,10 +50,9 @@ EXTRA_FFI_LIBS =
 endif
 endif
 
+# bin_PROGRAMS = esorex
 
-bin_PROGRAMS = esorex
-
-noinst_LTLIBRARIES = libesorex.la
+lib_LTLIBRARIES = libesorex.la
 
 
 noinst_HEADERS = \
@@ -79,7 +78,8 @@ libesorex_la_SOURCES = \
     er_stringarray.c \
     er_stringutils.c \
     er_paf.c \
-    er_json.c
+    er_json.c \
+    er_main.cpp getopt.c getopt1.c getopt.h
 
 if ENABLE_PYTHON_RECIPES
 libesorex_la_SOURCES += er_python.c
@@ -88,13 +88,13 @@ EXTRA_FFI_LIBS :=
 endif
 
 
-esorex_SOURCES = er_main.cpp 
+# esorex_SOURCES = er_main.cpp 
 
-EXTRA_esorex_SOURCES = getopt.c getopt1.c getopt.h
+# EXTRA_esorex_SOURCES = getopt.c getopt1.c getopt.h
 
-config_DATA =
+# config_DATA =
 
-esorex_LDFLAGS = $(CPL_LDFLAGS) $(LIBLTDL)
-esorex_LDADD = @GETOPT@ $(LIBESOREX) $(EXTRA_FFI_LIBS) \
-               $(LIBCPLDFS) $(LIBCPLUI) $(LIBCPLCORE) $(LIBCEXT) $(LIBLTDL)
-esorex_DEPENDENCIES = @GETOPT@ $(LIBESOREX)
+# esorex_LDFLAGS = $(CPL_LDFLAGS) $(LIBLTDL)
+# esorex_LDADD = @GETOPT@ $(LIBESOREX) $(EXTRA_FFI_LIBS) \
+#                $(LIBCPLDFS) $(LIBCPLUI) $(LIBCPLCORE) $(LIBCEXT) $(LIBLTDL)
+# esorex_DEPENDENCIES = @GETOPT@ $(LIBESOREX)
