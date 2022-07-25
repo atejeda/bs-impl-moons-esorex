@@ -1,14 +1,14 @@
 About EsoRex
 -------------
 
-This is version 3.13.5 of the EsoRex application if a form of shared library
+This is version 3.13.5 of the EsoRex application in a form of shared library
 mean to be used programatically by C/C++ applications by exposing the main
 function as:
 
   er_main(int argc, char *argv[]).
 
 No headers are provided, c/c++ applications need to resolve the er_main symbol
-and linkage time by using extern, e.g.: 
+at linkage time by using extern, e.g.: 
 
   extern er_main(int argc, char *argv[]);
 
