@@ -36,6 +36,10 @@ original README.
     --prefix=<where-esorex-will-be-installed> \
   	--with-cpl=<where-cpl-is-installed> \
   	--with-cfitsio=<where-cfitsio-is-installed>
+    
+VLT2020 environments, use the version of cpl already provided:
+
+  ./configure --with-cpl=/vlt/VLT2020/cpl
 
 As needed:
 
