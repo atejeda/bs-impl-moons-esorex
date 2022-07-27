@@ -11,6 +11,9 @@ No headers are provided, c/c++ applications need to resolve the er_main symbol
 at linkage time by using extern, e.g.: 
 
   extern er_main(int argc, char *argv[]);
+  
+This function works exactly as any main c/c++ function, hence it can handle all
+the options originally defined at command line.
 
 Refer to the original version in https://www.eso.org/sci/software/cpl/download.html
 
