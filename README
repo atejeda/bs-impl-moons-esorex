@@ -42,7 +42,7 @@ original README.
     
 VLT2020 environments, use the version of cpl already provided:
 
-  ./configure --with-cpl=/vlt/VLT2020/cpl
+  ./configure --with-cpl=/vlt/VLT2020/cpl --with-cext=/vlt/VLT2020/cpl
 
 As needed:
 
