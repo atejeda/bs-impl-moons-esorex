@@ -13,7 +13,7 @@ at linkage time by using extern, e.g.:
   extern er_main(int argc, char *argv[]);
   
 This function works exactly as any main c/c++ function, hence it can handle all
-the options originally defined at command line.
+the options originally defined at command line for the original esorex.
 
 Refer to the original version in https://www.eso.org/sci/software/cpl/download.html
 
@@ -26,29 +26,42 @@ Few autoconf files were modified, in order to reflect those changes it is needed
 to re-generate those files, e.g.:
 
   autoreconf --install --force
+  
+Build
+-------------
 
-To clean dist, maintenance, etc:
-
-  MAINTAINER_MODE=1 make maintainer-clean
-  make distclean clean
+This repository was already configured to to just execute ./configure command,
+there is no need to re-generate the autoconf files.
 
 To build the binaries, more about on non-trivial automake options, refer to the
-original README.
+original README (bear in mind that there is external dependencies needed, like
+cpl, cfitsio, etc..).
 
   ./configure \
     --prefix=<where-esorex-will-be-installed> \
   	--with-cpl=<where-cpl-is-installed> \
   	--with-cfitsio=<where-cfitsio-is-installed>
-    
-VLT2020 environments, use the version of cpl already provided:
+  
+Build for VLT2020
+-------------
+
+VLT2020 environments, use the cpl and ctext version already provided in VLT2020:
 
   ./configure --with-cpl=/vlt/VLT2020/cpl --with-cext=/vlt/VLT2020/cpl
 
 As needed:
 
     make && make install
+    
+Others
+-------------
 
-Files installed:
+To clean dist, maintenance, etc:
+
+  MAINTAINER_MODE=1 make maintainer-clean
+  make distclean clean
+  
+Files installed after a build are:
 
   lib/libesorex.so.0.0.0
   lib/libesorex.so.0
